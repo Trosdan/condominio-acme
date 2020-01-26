@@ -16,9 +16,11 @@ import javax.persistence.Table;
 
 import br.com.acme.aviso.Aviso;
 import br.com.acme.multas.Multa;
+import br.com.acme.unidade.Unidade;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -28,7 +30,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Builder
+// @Builder
+@NoArgsConstructor
 @EqualsAndHashCode
 @Table(name = "tb_condominio")
 public class Condominio implements Serializable {
@@ -49,5 +52,7 @@ public class Condominio implements Serializable {
 	
 	@OneToMany
 	private Set<Aviso> avisos;
-	
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "condominioUnidade")
+	private Set<Unidade> unidades;
 }

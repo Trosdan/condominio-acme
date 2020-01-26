@@ -23,6 +23,7 @@ import br.com.acme.unidade.Unidade;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -32,7 +33,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Builder
+// @Builder
+@NoArgsConstructor
 @EqualsAndHashCode
 @Table(name = "tb_multas")
 public class Multa implements Serializable {
