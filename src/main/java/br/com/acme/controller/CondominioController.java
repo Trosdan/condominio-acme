@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.acme.condominio.Condominio;
 import br.com.acme.service.CondominioService;
-import br.com.acme.unidade.Unidade;
 
 @RestController
 @RequestMapping("/api")

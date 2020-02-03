@@ -40,7 +40,7 @@ public class AvisoController {
 		return ResponseEntity.ok(aviso);
 	}
 	
-	@GetMapping("/unidade/{id}/aviso")
+	@GetMapping("/unidade/{id}/avisos")
 	public ResponseEntity<List<Aviso>> list() {
 		return ResponseEntity.ok(this.service.list());
 	}

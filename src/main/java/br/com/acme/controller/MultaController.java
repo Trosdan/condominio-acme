@@ -30,7 +30,7 @@ public class MultaController {
 	private UnidadeService serviceUnidade;
 	
 	@ResponseStatus(code = HttpStatus.CREATED)
-	@PostMapping("/unidade/{id}/multa")
+	@PostMapping("/unidade/{id}/multas")
 	public ResponseEntity<Multa> save(@PathVariable("id") Long id, @RequestBody Multa multa) {
 		Optional<Unidade> unidadeOptional = this.serviceUnidade.findById(id);
 		if(unidadeOptional.isPresent()) {
@@ -40,7 +40,7 @@ public class MultaController {
 		return ResponseEntity.ok(multa);
 	}
 	
-	@GetMapping("/unidade/{id}/aviso")
+	@GetMapping("/unidade/{id}/multas")
 	public ResponseEntity<List<Multa>> list() {
 		return ResponseEntity.ok(this.service.list());
 	}

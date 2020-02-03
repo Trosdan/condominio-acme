@@ -7,12 +7,15 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import br.com.acme.responsavel.Responsavel;
 import lombok.Builder;
@@ -41,7 +44,8 @@ public class Reclamacao  implements Serializable{
 	
 	private LocalDate dataReclamacao;
 	
-	@ManyToOne
+	@ManyToOne( fetch = FetchType.LAZY)
+	@JsonBackReference
 	@JoinColumn(name = "id_responsavel")
 	private Responsavel responsavelReclamacao;
 }

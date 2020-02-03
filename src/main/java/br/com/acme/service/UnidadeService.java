@@ -14,7 +14,7 @@ import br.com.acme.unidade.Unidade;
 public class UnidadeService {
 
 	@Autowired
-	private UnidadeRepository repository;
+	private UnidadeRepository repository;	
 
 	@Transactional
 	public void save(Unidade unidade) {
@@ -30,4 +30,9 @@ public class UnidadeService {
 	public Optional<Unidade> findById(Long id) {
 		return this.repository.findById(id);
 	}
+	
+//	@Transactional
+//	public List<Unidade> listMulta(boolean isMulta) {
+//		// return this.repository.listMulta(isMulta);
+//	}
 }
